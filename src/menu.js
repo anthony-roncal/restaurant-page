@@ -1,16 +1,10 @@
-export default function loadMenuPage() {
-    const content = document.getElementById('content');
-    const image = document.createElement('img');
-    const headline = document.createElement('p');
-    const copy = document.createElement('p');
+export default function loadHomePage() {
+  const headline = document.createElement('p');
+  const copy = document.createElement('p');
+
+  headline.innerHTML = 'Menu';
+  copy.innerHTML = 'This is the menu';
   
-    image.src = "../images/donuts.jpg";
-    headline.innerHTML = 'Menu';
-    copy.innerHTML = 'This is the menu';
-  
-    content.appendChild(image);
-    content.appendChild(headline);
-    content.appendChild(copy);
-  
-    document.body.appendChild(content);
-  }
+  content.appendChild(headline);
+  content.appendChild(copy);
+ }

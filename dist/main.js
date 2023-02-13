@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/contact.js":
@@ -16,7 +15,18 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadContactPage)\n/* harmony export */ });\nfunction loadContactPage() {\n    const content = document.getElementById('content');\n    const image = document.createElement('img');\n    const headline = document.createElement('p');\n    const copy = document.createElement('p');\n  \n    image.src = \"../images/donuts.jpg\";\n    headline.innerHTML = 'Contact';\n    copy.innerHTML = 'Contact us!';\n  \n    content.appendChild(image);\n    content.appendChild(headline);\n    content.appendChild(copy);\n  \n    document.body.appendChild(content);\n  }\n\n//# sourceURL=webpack://odin-restaurant-page/./src/contact.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadContactPage)\n/* harmony export */ });\nfunction loadContactPage() {\n    const content = document.getElementById('content');\n    const image = document.createElement('img');\n    const headline = document.createElement('p');\n    const copy = document.createElement('p');\n  \n    // image.src = \"../images/donuts.jpg\";\n    headline.innerHTML = 'Contact';\n    copy.innerHTML = 'Contact us!';\n  \n    content.appendChild(image);\n    content.appendChild(headline);\n    content.appendChild(copy);\n  \n    document.body.appendChild(content);\n  }\n\n//# sourceURL=webpack://odin-restaurant-page/./src/contact.js?");
+
+/***/ }),
+
+/***/ "./src/donuts.jpg":
+/*!************************!*\
+  !*** ./src/donuts.jpg ***!
+  \************************/
+/***/ (() => {
+
+eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:5)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack://odin-restaurant-page/./src/donuts.jpg?");
 
 /***/ }),
 
@@ -26,7 +36,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadHomePage)\n/* harmony export */ });\nfunction loadHomePage() {\n  const content = document.getElementById('content');\n  const image = document.createElement('img');\n  const headline = document.createElement('p');\n  const copy = document.createElement('p');\n\n  image.src = \"../images/donuts.jpg\";\n  headline.innerHTML = 'Headline';\n  copy.innerHTML = 'Copy goes here';\n\n  content.appendChild(image);\n  content.appendChild(headline);\n  content.appendChild(copy);\n\n  document.body.appendChild(content);\n}\n\n//# sourceURL=webpack://odin-restaurant-page/./src/home.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadHomePage)\n/* harmony export */ });\n// import Donuts from './donuts.jpg';\n\nfunction loadHomePage() {\n  const content = document.getElementById('content');\n  // const image = document.createElement('img');\n  const image = new Image();\n  const headline = document.createElement('p');\n  const copy = document.createElement('p');\n\n  // image.src = Donuts;\n  headline.innerHTML = 'Headline';\n  copy.innerHTML = 'Copy goes here';\n\n  // content.appendChild(image);\n  content.appendChild(headline);\n  content.appendChild(copy);\n\n  document.body.appendChild(content);\n}\n\n//# sourceURL=webpack://odin-restaurant-page/./src/home.js?");
 
 /***/ }),
 
@@ -36,7 +47,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\nconst body = document.querySelector('body');\nconst header = document.createElement('header');\nconst nav = document.createElement('ul');\nconst homeNav = document.createElement('button');\nconst menuNav = document.createElement('button');\nconst contactNav = document.createElement('button');\nconst content = document.getElementById('content');\n\nhomeNav.textContent = \"Home\";\nmenuNav.textContent = \"Menu\";\ncontactNav.textContent = \"Contact\";\nnav.appendChild(homeNav);\nnav.appendChild(menuNav);\nnav.appendChild(contactNav);\nnav.classList.add('nav');\nheader.appendChild(nav);\nbody.appendChild(header);\n\n(0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\nfunction clearContents() {\n    Array.from(content.children).forEach(element => {\n        content.removeChild(element);\n    });\n}\n\nfunction switchToHomePage() {\n    clearContents();\n    (0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n}\n\nfunction switchToMenuPage() {\n    clearContents();\n    (0,_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n}\n\nfunction switchToContactPage() {\n    clearContents();\n    (0,_contact__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n}\n\nhomeNav.addEventListener('click', switchToHomePage);\nmenuNav.addEventListener('click', switchToMenuPage);\ncontactNav.addEventListener('click', switchToContactPage);\n\n//# sourceURL=webpack://odin-restaurant-page/./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _donuts_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./donuts.jpg */ \"./src/donuts.jpg\");\n/* harmony import */ var _donuts_jpg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_donuts_jpg__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\nconst image = new Image();\nimage.src = (_donuts_jpg__WEBPACK_IMPORTED_MODULE_4___default());\n\nconst body = document.querySelector('body');\nconst header = document.createElement('header');\nconst nav = document.createElement('ul');\nconst homeNav = document.createElement('button');\nconst menuNav = document.createElement('button');\nconst contactNav = document.createElement('button');\nconst content = document.getElementById('content');\n\nhomeNav.textContent = \"Home\";\nmenuNav.textContent = \"Menu\";\ncontactNav.textContent = \"Contact\";\nnav.appendChild(homeNav);\nnav.appendChild(menuNav);\nnav.appendChild(contactNav);\nnav.classList.add('nav');\nheader.appendChild(nav);\nbody.appendChild(header);\n\n(0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\nfunction clearContents() {\n    Array.from(content.children).forEach(element => {\n        content.removeChild(element);\n    });\n}\n\nfunction switchToHomePage() {\n    clearContents();\n    (0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n}\n\nfunction switchToMenuPage() {\n    clearContents();\n    (0,_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n}\n\nfunction switchToContactPage() {\n    clearContents();\n    (0,_contact__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n}\n\nhomeNav.addEventListener('click', switchToHomePage);\nmenuNav.addEventListener('click', switchToMenuPage);\ncontactNav.addEventListener('click', switchToContactPage);\n\n//# sourceURL=webpack://odin-restaurant-page/./src/index.js?");
 
 /***/ }),
 
@@ -46,7 +58,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hom
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadMenuPage)\n/* harmony export */ });\nfunction loadMenuPage() {\n    const content = document.getElementById('content');\n    const image = document.createElement('img');\n    const headline = document.createElement('p');\n    const copy = document.createElement('p');\n  \n    image.src = \"../images/donuts.jpg\";\n    headline.innerHTML = 'Menu';\n    copy.innerHTML = 'This is the menu';\n  \n    content.appendChild(image);\n    content.appendChild(headline);\n    content.appendChild(copy);\n  \n    document.body.appendChild(content);\n  }\n\n//# sourceURL=webpack://odin-restaurant-page/./src/menu.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadMenuPage)\n/* harmony export */ });\nfunction loadMenuPage() {\n    const content = document.getElementById('content');\n    const image = document.createElement('img');\n    const headline = document.createElement('p');\n    const copy = document.createElement('p');\n  \n    // image.src = \"../images/donuts.jpg\";\n    headline.innerHTML = 'Menu';\n    copy.innerHTML = 'This is the menu';\n  \n    content.appendChild(image);\n    content.appendChild(headline);\n    content.appendChild(copy);\n  \n    document.body.appendChild(content);\n  }\n\n//# sourceURL=webpack://odin-restaurant-page/./src/menu.js?");
+
+/***/ }),
+
+/***/ "./src/style.css":
+/*!***********************!*\
+  !*** ./src/style.css ***!
+  \***********************/
+/***/ (() => {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (1:5)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> body {\\n|     background-color: #e2e8f0;\\n|     margin: 0;\");\n\n//# sourceURL=webpack://odin-restaurant-page/./src/style.css?");
 
 /***/ })
 
@@ -77,6 +100,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
