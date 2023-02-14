@@ -1,12 +1,19 @@
+import Logo from './logo.png';
+
 export default function loadHomePage() {
-  const body = document.querySelector('body');
-  const footer = document.createElement('footer');
-  const headline = document.createElement('p');
+  const logo = document.createElement('img');
   const copy = document.createElement('p');
 
-  headline.innerHTML = 'Headline';
-  copy.innerHTML = 'Copy goes here';
+  logo.src = Logo;
+  logo.classList.add('logo');
+  copy.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+      culpa qui officia deserunt mollit anim id est laborum.`;
 
-  content.appendChild(headline);
+  content.appendChild(logo);
   content.appendChild(copy);
 }

@@ -13,7 +13,7 @@ const contactNav = document.createElement('button');
 const content = document.getElementById('content');
 const footer = document.createElement('footer');
 
-content.style.backgroundImage = `url(${Restaurant})`;
+body.style.backgroundImage = `url(${Restaurant})`;
 
 homeNav.textContent = "Home";
 menuNav.textContent = "Menu";
