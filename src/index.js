@@ -10,8 +10,11 @@ const nav = document.createElement('ul');
 const homeNav = document.createElement('button');
 const menuNav = document.createElement('button');
 const contactNav = document.createElement('button');
-const content = document.getElementById('content');
+const content = document.createElement('div');
 const footer = document.createElement('footer');
+
+content.id = 'content';
+body.appendChild(content);
 
 body.style.backgroundImage = `url(${Restaurant})`;
 
