@@ -19,11 +19,11 @@ export default function loadHomePage() {
   const leftBtn = document.createElement('button');
   leftBtn.textContent = 'Previous';
   leftBtn.classList.add('leftBtn');
-  leftBtn.addEventListener('click', scroll);
+  leftBtn.addEventListener('click', scrollLeft);
   const rightBtn = document.createElement('button');
   rightBtn.textContent = 'Next';
   rightBtn.classList.add('rightBtn');
-  rightBtn.addEventListener('click', scroll);
+  rightBtn.addEventListener('click', scrollRight);
   const slides = document.createElement('div');
   slides.classList.add('slides');
 
@@ -64,14 +64,30 @@ export default function loadHomePage() {
   content.append(logo, copy, carousel, dots);
 }
 
-function scroll(e) {
-  var dots = document.querySelectorAll('.dot');
-  var index = Array.from(dots).indexOf(document.querySelector('.current-dot'));
-  if(e.target.classList.contains('rightBtn') && index < dots.length - 1) {
-    scrollToPosition(index + 1);
-  } else if (e.target.classList.contains('leftBtn') && index > 0) {
-    scrollToPosition(index - 1);
-  }
+// function scroll(e) {
+//   var dots = document.querySelectorAll('.dot');
+//   var index = Array.from(dots).indexOf(document.querySelector('.current-dot'));
+//   if(e.target.classList.contains('rightBtn') && index < dots.length - 1) {
+//     scrollToPosition(index + 1);
+//   } else if (e.target.classList.contains('leftBtn') && index > 0) {
+//     scrollToPosition(index - 1);
+//   }
+// }
+
+function scrollRight() {
+  var dots = Array.from(document.querySelectorAll('.dot'));
+  var index = dots.indexOf(document.querySelector('.current-dot'));
+  var nextSlide;
+  (index === dots.length - 1) ? nextSlide = 0 : nextSlide = index + 1;
+  scrollToPosition(nextSlide);
+}
+
+function scrollLeft() {
+  var dots = Array.from(document.querySelectorAll('.dot'));
+  var index = dots.indexOf(document.querySelector('.current-dot'));
+  var prevSlide;
+  (index === 0) ? prevSlide = dots.length - 1 : prevSlide = index - 1;
+  scrollToPosition(prevSlide);
 }
 
 function getDotIndex(e) {
