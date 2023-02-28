@@ -57,4 +57,3 @@ function switchToContactPage() {
 homeNav.addEventListener('click', switchToHomePage);
 menuNav.addEventListener('click', switchToMenuPage);
 contactNav.addEventListener('click', switchToContactPage);
-
