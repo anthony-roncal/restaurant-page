@@ -130,6 +130,7 @@ a {
     position: absolute;
     background-color: rgba(25, 25, 25, 0);
     border: none;
+    cursor: pointer;
 }
 
 .carousel > button:hover {

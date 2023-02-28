@@ -47,16 +47,16 @@ export default function loadHomePage() {
   dots.classList.add('dots');
   const dot1 = document.createElement('div');
   dot1.classList.add('dot', 'current-dot');
-  dot1.addEventListener('click', scrollToPosition);
+  dot1.addEventListener('click', getDotIndex);
   const dot2 = document.createElement('div');
   dot2.classList.add('dot');
-  dot2.addEventListener('click', scrollToPosition);
+  dot2.addEventListener('click', getDotIndex);
   const dot3 = document.createElement('div');
   dot3.classList.add('dot');
-  dot3.addEventListener('click', scrollToPosition);
+  dot3.addEventListener('click', getDotIndex);
   const dot4 = document.createElement('div');
   dot4.classList.add('dot');
-  dot4.addEventListener('click', scrollToPosition);
+  dot4.addEventListener('click', getDotIndex);
   
   slides.append(slide1, slide2, slide3, slide4);
   carousel.append(leftBtn, slides, rightBtn);
@@ -64,21 +64,24 @@ export default function loadHomePage() {
   content.append(logo, copy, carousel, dots);
 }
 
-var scrollLength = 0; 
-var scrollInterval = 25;
-
 function scroll(e) {
-  if(e.target.classList.contains('rightBtn') && scrollLength > -75) {
-    scrollLength -= scrollInterval;
-  } else if (e.target.classList.contains('leftBtn') && scrollLength < 0) {
-    scrollLength += scrollInterval;
+  var dots = document.querySelectorAll('.dot');
+  var index = Array.from(dots).indexOf(document.querySelector('.current-dot'));
+  if(e.target.classList.contains('rightBtn') && index < dots.length - 1) {
+    scrollToPosition(index + 1);
+  } else if (e.target.classList.contains('leftBtn') && index > 0) {
+    scrollToPosition(index - 1);
   }
-  document.querySelector('.slides').style.transform = `translate(${scrollLength.toString()}%)`;
 }
 
-function scrollToPosition(e) {
+function getDotIndex(e) {
   var index = Array.from(e.target.parentNode.children).indexOf(e.target);
-  document.querySelector('.slides').style.transform = `translate(${index * -25}%)`;
+  scrollToPosition(index);
+}
+
+function scrollToPosition(index) {
+  const scrollInterval = 25;
+  document.querySelector('.slides').style.transform = `translate(-${index * scrollInterval}%)`;
   document.querySelector('.current-dot').classList.toggle('current-dot');
   document.querySelectorAll('.dot')[index].classList.add('current-dot');
 }
