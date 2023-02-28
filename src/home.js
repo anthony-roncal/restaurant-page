@@ -34,21 +34,34 @@ export default function loadHomePage() {
   const slide2 = document.createElement('div');
   slide2.classList.add('slide');
   slide2.textContent = '2';
-  // slide2.style.transform = 'translate(100%)';
 
   const slide3 = document.createElement('div');
   slide3.classList.add('slide');
   slide3.textContent = '3';
-  // slide3.style.transform = 'translate(200%)';
 
   const slide4 = document.createElement('div');
   slide4.classList.add('slide');
   slide4.textContent = '4';
-  // slide4.style.transform = 'translate(300%)';
 
+  const dots = document.createElement('div');
+  dots.classList.add('dots');
+  const dot1 = document.createElement('div');
+  dot1.classList.add('dot', 'current-dot');
+  dot1.addEventListener('click', scrollToPosition);
+  const dot2 = document.createElement('div');
+  dot2.classList.add('dot');
+  dot2.addEventListener('click', scrollToPosition);
+  const dot3 = document.createElement('div');
+  dot3.classList.add('dot');
+  dot3.addEventListener('click', scrollToPosition);
+  const dot4 = document.createElement('div');
+  dot4.classList.add('dot');
+  dot4.addEventListener('click', scrollToPosition);
+  
   slides.append(slide1, slide2, slide3, slide4);
   carousel.append(leftBtn, slides, rightBtn);
-  content.append(logo, copy, carousel);
+  dots.append(dot1, dot2, dot3, dot4);
+  content.append(logo, copy, carousel, dots);
 }
 
 var scrollLength = 0; 
@@ -61,4 +74,11 @@ function scroll(e) {
     scrollLength += scrollInterval;
   }
   document.querySelector('.slides').style.transform = `translate(${scrollLength.toString()}%)`;
+}
+
+function scrollToPosition(e) {
+  var index = Array.from(e.target.parentNode.children).indexOf(e.target);
+  document.querySelector('.slides').style.transform = `translate(${index * -25}%)`;
+  document.querySelector('.current-dot').classList.toggle('current-dot');
+  document.querySelectorAll('.dot')[index].classList.add('current-dot');
 }

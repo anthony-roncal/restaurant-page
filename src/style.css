@@ -179,3 +179,23 @@ a {
     right: 0px;
     top: 0px;
 }
+
+.dots {
+    display: flex;
+    align-self: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #909090;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.current-dot {
+    background-color: #E0E0E0;
+}
