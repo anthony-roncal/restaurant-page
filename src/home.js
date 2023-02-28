@@ -47,32 +47,27 @@ export default function loadHomePage() {
   dots.classList.add('dots');
   const dot1 = document.createElement('div');
   dot1.classList.add('dot', 'current-dot');
-  dot1.addEventListener('click', getDotIndex);
+  dot1.addEventListener('click', getClickedDotIndex);
   const dot2 = document.createElement('div');
   dot2.classList.add('dot');
-  dot2.addEventListener('click', getDotIndex);
+  dot2.addEventListener('click', getClickedDotIndex);
   const dot3 = document.createElement('div');
   dot3.classList.add('dot');
-  dot3.addEventListener('click', getDotIndex);
+  dot3.addEventListener('click', getClickedDotIndex);
   const dot4 = document.createElement('div');
   dot4.classList.add('dot');
-  dot4.addEventListener('click', getDotIndex);
+  dot4.addEventListener('click', getClickedDotIndex);
   
   slides.append(slide1, slide2, slide3, slide4);
   carousel.append(leftBtn, slides, rightBtn);
   dots.append(dot1, dot2, dot3, dot4);
   content.append(logo, copy, carousel, dots);
+
+  scrollToPosition(slides.children.length - 1);
+  autoScroll();
 }
 
-// function scroll(e) {
-//   var dots = document.querySelectorAll('.dot');
-//   var index = Array.from(dots).indexOf(document.querySelector('.current-dot'));
-//   if(e.target.classList.contains('rightBtn') && index < dots.length - 1) {
-//     scrollToPosition(index + 1);
-//   } else if (e.target.classList.contains('leftBtn') && index > 0) {
-//     scrollToPosition(index - 1);
-//   }
-// }
+var autoTimer;
 
 function scrollRight() {
   var dots = Array.from(document.querySelectorAll('.dot'));
@@ -90,7 +85,7 @@ function scrollLeft() {
   scrollToPosition(prevSlide);
 }
 
-function getDotIndex(e) {
+function getClickedDotIndex(e) {
   var index = Array.from(e.target.parentNode.children).indexOf(e.target);
   scrollToPosition(index);
 }
@@ -100,4 +95,10 @@ function scrollToPosition(index) {
   document.querySelector('.slides').style.transform = `translate(-${index * scrollInterval}%)`;
   document.querySelector('.current-dot').classList.toggle('current-dot');
   document.querySelectorAll('.dot')[index].classList.add('current-dot');
+}
+
+function autoScroll() {
+  var autoScrollInterval = 5000;
+  scrollRight();
+  autoTimer = setTimeout(autoScroll, autoScrollInterval);
 }
