@@ -1,3 +1,3 @@
-# odin-restaurant-page
+# restaurant-page
 
-This is a practice project for The Odin Project: Restaurant Page.
+View app at: https://anthony-roncal.github.io/restaurant-page/
